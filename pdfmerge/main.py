@@ -31,12 +31,15 @@ def create_watermark_debug(text, filename):
         os.makedirs(os.path.dirname(filename), exist_ok=True)
 
         c = canvas.Canvas(filename, pagesize=letter)
-        c.setFont("Helvetica", 36)
+        # c.setFont("Helvetica", 36)
+        c.setFont("Courier-Bold", 36)
+        c.setAuthor("Shan")
         c.setFillAlpha(0.2)
         c.setFillColor("red")
+        # c.setStrokeColor("red")
         width, height = letter
         # Header
-        c.drawCentredString(width / 2, height - 40, text)
+        c.drawCentredString(width / 2, height - 28, text)
         # Footer
         c.drawCentredString(width / 2, 40, text)
         # (Optional) Diagonal center -- comment out if not needed
